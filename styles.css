@@ -146,6 +146,7 @@ body {
     .rain-area {
         width: 100%;
         left: 0;
+        right:0;
         top: 100px; /* Adjust starting point for smaller screens */
         transform: translateX(0); /* Adjust for better centering */
     }
