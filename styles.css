@@ -41,7 +41,7 @@ body {
 .rain-area {
     position: fixed;
     top: 135px;
-    left: 100%;
+    left: 50%;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -146,5 +146,10 @@ body {
     .rain-area {
         width: 100%;
         left: 0;
+        top: 100px; /* Adjust starting point for smaller screens */
+    }
+
+    .drop {
+        font-size: 1em; /* Reduce drop size for mobile */
     }
 }
