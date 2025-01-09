@@ -1,0 +1,150 @@
+:root {
+    --clr: #ff69b4; /* Pink color for the love theme */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000; /* Light background for contrast */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.cloud-image {
+    margin: 10px auto;
+    width: 80%; /* Adjust size for mobile */
+    max-width: 320px;
+    text-align: center;
+}
+
+.cloud-image img {
+    width: 100%;
+    height: auto;
+}
+
+#wish {
+    margin-top: 20px; /* Margin directly below the cloud image */
+    font-size: 1.5em;
+    color: red;
+    text-shadow: 2px 2px 5px rgba(220, 77, 77, 0.942);
+}
+
+.rain-area {
+    position: fixed;
+    top: 135px;
+    left: 50%;
+    width: 80%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.drop {
+    position: absolute;
+    top: 0;
+    color: var(--clr);
+    animation: fall linear forwards;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Heart counter styling */
+#heart-counter {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    color: var(--clr);
+    z-index: 3; /* Above slider and rain */
+}
+
+.slider {
+    width: 90%;
+    max-width: 380px; /* Mobile-friendly size */
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Above rain area */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 600px) {
+    #wish {
+        font-size: 1.2em;
+    }
+    
+    .cloud-image {
+        max-width: 90%;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+
+    .rain-area {
+        width: 100%;
+        left: 0;
+    }
+}
