@@ -27,7 +27,7 @@ function rain() {
 // Start heart rain from below the cloud
 setInterval(() => {
     rain();
-}, 25);
+}, 150);
 
 // Slider functionality
 const sliderTrack = document.querySelector('.slider-track');
